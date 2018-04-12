@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	redisSrvPath  = flag.String("redis_srv_path", "conf/redis/srv/", "Redis SRV configure path")
+	redisSrvPath  = flag.String("redis_srv_path", "$GOPATH/src/github.com/toniz/gudp/conf/redis/srv/", "Redis SRV configure path")
 	redisLoadType = flag.Int("redis_load_type", 1, "Redis Load Type: 1 [Json File]; 2 [DB]; 3 [ETCD]")
 )
 
