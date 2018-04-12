@@ -8,6 +8,10 @@ import (
 	"google.golang.org/grpc/grpclog"
 )
 
+var (
+	defaultPath = os.Getenv("GOPATH") + "/src/github.com/toniz/gudp/"
+)
+
 func NewMysqlConfig() (*MysqlConfig, error) {
 	s := &MysqlConfig{DC: make(MysqlDBs), SC: make(MysqlSQLs)}
 	err := s.LoadConfigure()

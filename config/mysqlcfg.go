@@ -6,8 +6,8 @@ import (
 )
 
 var (
-	mysqlDBPath   = flag.String("mysql_db_path", "$GOPATH/src/github.com/toniz/gudp/conf/mysql/db/", "Mysql DB configure path")
-	mysqlSqlPath  = flag.String("mysql_sql_path", "$GOPATH/src/github.com/toniz/gudp/conf/mysql/sql/", "Mysql SQL configure path")
+	mysqlDBPath   = flag.String("mysql_db_path", defaultPath+"conf/mysql/db/", "Mysql DB configure path")
+	mysqlSqlPath  = flag.String("mysql_sql_path", defaultPath+"conf/mysql/sql/", "Mysql SQL configure path")
 	mysqlLoadType = flag.Int("mysql_load_type", 1, "Mysql Load Type: 1 [Json File]; 2 [DB]; 3 [ETCD]")
 )
 
