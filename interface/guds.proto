@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package guds;
+
+// Interface exported by the server.
+service UnifiedData{
+  rpc DBCommit(Query) returns (Response) {}
+}
+
+message RowData {
+  map<string, string> Fields = 1;
+}
+
+message ParamsGroup {
+  map<string, string> Params = 1;
+}
+
+message Query {
+  string Engine = 1;
+  string Ident  = 2;
+  string Opt    = 3;
+  map<string, string> Params = 4;
+  repeated ParamsGroup Group = 5;
+}
+
+message Response {
+  uint32 Count   = 1;
+  repeated RowData Rows  = 2;
+}  
+
+
+

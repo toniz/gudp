@@ -1,0 +1,27 @@
+{
+    "db_t_account_w" : 
+    {
+        "DBName" : "accountdb",
+        "DBUser" : "account_rw",
+        "DBPass" : "123456",
+        "ConnString" : "127.0.0.1:4000",
+        "ConnMaxIdleTime" : 60,
+        "ConnTimeout" : 5,
+        "ConnMaxCnt" : 100,
+        "ConnMaxLifetime" : 3600,
+        "ConnEncoding" : "utf8,utf8mb4"
+    },
+    "db_t_account_r" : 
+    {
+        "DBName" : "accountdb",
+        "DBUser" : "account_r",
+        "DBPass" : "123456",
+        "ConnString" : "127.0.0.1:4000",
+        "ConnMaxIdleTime" : 60,
+        "ConnTimeout" : 5,
+        "ConnMaxCnt" : 100,
+        "ConnMaxLifetime" : 3600,
+        "ConnEncoding" : "utf8,utf8mb4"
+    }
+}
+

@@ -1,0 +1,31 @@
+{
+    "IMAGE_t_image_insert" :
+    {
+        "sql" : "INSERT INTO t_image(id, md5, name, type) VALUES($id$, $md5$ ,$name$, $type$);",
+        "db" : "db_t_image_w"
+    },
+    "IMAGE_t_image_update" :
+    {
+        "sql" : "UPDATE t_image SET name = $name$ WHERE id = $id$;",
+        "db" : "db_t_image_w"
+    },
+    "IMAGE_t_image_delete" :
+    {
+        "sql" : "DELETE FROM t_image WHERE id = $id$",
+        "db" : "db_t_image_w"
+    },
+    "IMAGE_t_image_insert_multi" :
+    {
+        "sql" : "REPLACE INTO $table_name$(id, md5, name) VALUES $values$",
+        "noquote": {"table_name":"", "values":""},
+        "noescape":{"values":""},
+        "check":   {"values": "^.*$"},
+        "db" : "db_t_image_w"
+    },
+    "ACCOUNT_t_user_select_by_name" :
+    {
+        "sql" : "SELECT id, md5, name FROM t_user WHERE name = $name$ ;",
+        "db" : "db_t_image_r"
+    }
+}
+
