@@ -61,7 +61,7 @@ Mysql Multi DB Transcation
 [Mysql Test Client](client/mysqlcli.go)  
 [mysql db configure](conf/mysql/db)  
 [mysql sql configure](conf/mysql/sql)  
-[mysql meta data](doc/mysqldata.sql)  
+[Test DB Create](doc/mysqldata.sql)  
 
 ```
 Step 1:
