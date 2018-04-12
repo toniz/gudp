@@ -8,8 +8,8 @@ import (
 	"github.com/go-redis/redis"
 	"google.golang.org/grpc/grpclog"
 
-	conf "bbwhat.net/gudserver/config"
-	pb "bbwhat.net/gudserver/interface"
+	pb "bbwhat.net/toniz/gudp/interface"
+	conf "github.com/toniz/gudp/config"
 )
 
 type RedisHandle map[string]*redis.Client

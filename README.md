@@ -13,6 +13,8 @@ GUDP is a Unified Data Proxy using GRPC. Currently support mysql and redis(redis
 ### REDIS:
 * Easy to use. 
 
+___
+
 # 简介
 GUDP是一个统一访问代理．目前支持mysql. Redis是实验特性,仅实现部分. 后面会添加更多数据源支持.
 开发人员只需要使用GRPC调用本服务,无需关心数据库连接和查询细节.满足大部分的数据服务需求,并且追求简单,轻量化以及扩展性.使用GO语言编码.
@@ -32,7 +34,7 @@ REDIS是实验性功能:
 * 简单易用,配置好配置文件就可访问redis.业务层不无关系链接细节.
 
 
-##Example:
+## Example:
 
 [MYSQL读写分离实现](doc/mysql_read_write_splitting.md)。 
 

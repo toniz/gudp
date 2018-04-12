@@ -13,8 +13,8 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"google.golang.org/grpc/grpclog"
 
-	conf "bbwhat.net/gudserver/config"
-	pb "bbwhat.net/gudserver/interface"
+	conf "github.com/toniz/gudp/config"
+	pb "github.com/toniz/gudp/interface"
 )
 
 type DBHandle map[string]*sql.DB

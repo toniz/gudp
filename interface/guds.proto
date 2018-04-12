@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package guds;
+package GUDP;
 
 // Interface exported by the server.
 service UnifiedData{
