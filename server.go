@@ -14,9 +14,9 @@ import (
 	"google.golang.org/grpc/grpclog"
 	//_ "google.golang.org/grpc/grpclog/glogger"
 
-	pb "bbwhat.net/gudserver/interface"
-	"bbwhat.net/gudserver/mysql"
-	"bbwhat.net/gudserver/redis"
+	pb "github.com/toniz/gudp/interface"
+	"github.com/toniz/gudp/mysql"
+	"github.com/toniz/gudp/redis"
 )
 
 var (
