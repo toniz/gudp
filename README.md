@@ -61,10 +61,18 @@ Mysql Multi DB Transcation
 [Mysql Test Client](client/mysqlcli.go)  
 [mysql db configure](conf/mysql/db)  
 [mysql sql configure](conf/mysql/sql)  
-[testdata](doc/mysqldata.sql)  
+[mysql meta data](doc/mysqldata.sql)  
 
 ```
+Step 1:
 go get -u github.com/toniz/gudp
+
+Step 2: Install Mysql and Run mysql Service on Port: 4000
+
+Step 3:
+mysql -u root -h 127.0.0.1 -P 4000 < $GOPATH/src/github.com/toniz/gudp/doc/mysqldata.sql 
+
+Step 4:
 export GRPC_GO_LOG_SEVERITY_LEVEL=INFO
 nohup gudp &
 
