@@ -43,4 +43,31 @@ REDIS是实验性功能:
 [MYSQL多数据库事务实现](doc/mysql_multi_db_transaction.md)。 
 
 
+### Mysql:
+[Mysql Test Client](client/mysqlcli.go)
+[mysql db configure](conf/mysql/db)
+[mysql sql configure](conf/mysql/sql)
+[testdata](doc/mysqldata.sql)
+
+```
+go get -u github.com/toniz/gudp
+export GRPC_GO_LOG_SEVERITY_LEVEL=INFO
+nohup gudp &
+
+cd $GOPATH/src/github.com/toniz/gudp/client
+go build mysqlcli.go 
+./mysqlcli
+```
+
+### Redis:
+[Redis Test Client](client/rediscli.go)
+[Redis Srv Configure](conf/redis/srv)
+
+```
+cd $GOPATH/src/github.com/toniz/gudp/client
+go build rediscli.go 
+./rediscli
+
+```
+
 
