@@ -2,7 +2,7 @@
 GUDP is a Unified Data Proxy using GRPC. Currently support mysql and redis(redis is an EXPERIMENTAL Feature.). Later will add more data source support. Developers only need to use GRPC to invoke this service without concern for database connection and query details. Meet most data service requirements, and pursue simplicity, lightweight and scalability. 
 
 ## GUDP features:
-* Unify data access. business layer
+* Unify data access.
 * Connections convergence. Several thousands of data request connections in the business layer. If you directly connect to the database, it will cause a waste of database resources. After GUDP, the number of links to the database can be optimally utilized.
 * Work hard to make it more scalable and support more data sources.
 * Horizontal expansion, business independence
@@ -11,6 +11,9 @@ GUDP is a Unified Data Proxy using GRPC. Currently support mysql and redis(redis
 * Security, business layer will not be exposed to the data source. Through the replacement of parameters to achieve data query, a good defense SQL injection.
 * Supports DB fragmentation.
 * Support multi-database transaction commit.
+
+**Cons:** GUDP In order to make the caller more easily obtain the data, GUDP fetches the data from the database and encapsulates it into a structure easily accessible by the business layer. Performance will be consumed. However, if the general business layer uses a database, the amount of data will not be large,  Therefore, the delay of a few milliseconds of query has little impact on service access. If there are many query result sets, for example, if a statistical program needs to query and output 1 million data, GUDP is not suitable.
+
 ### REDIS:
 * Easy to use. 
 
@@ -31,6 +34,8 @@ MYSQL功能比较完善，目前有如下特性：
 * 安全,业务层不会接触到数据源.通过参数替换达到数据查询效果，屏蔽了注入SQL的途径.
 * 支持数据库分片.
 * 支持多数据库事务提交.
+缺点：
+为了做到简单易用对业务友好，GUDP从数据库取出数据会封装成业务层容易获取的结构。性能会有所消耗。但一般业务层使用数据库，数据量不会很大，所以会体现在查询延时多个几毫秒。如果查询结果集很多，如某统计程序需要一次查询输出100万条数据之类的需求，GUDP就不适合。
 
 REDIS是实验性功能:
 * 简单易用,配置好配置文件就可访问redis.业务层不无关系链接细节.
