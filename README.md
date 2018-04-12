@@ -44,10 +44,10 @@ REDIS是实验性功能:
 
 
 ### Mysql:
-[Mysql Test Client](client/mysqlcli.go)
-[mysql db configure](conf/mysql/db)
-[mysql sql configure](conf/mysql/sql)
-[testdata](doc/mysqldata.sql)
+[Mysql Test Client](client/mysqlcli.go)  
+[mysql db configure](conf/mysql/db)  
+[mysql sql configure](conf/mysql/sql)  
+[testdata](doc/mysqldata.sql)  
 
 ```
 go get -u github.com/toniz/gudp
@@ -60,8 +60,8 @@ go build mysqlcli.go
 ```
 
 ### Redis:
-[Redis Test Client](client/rediscli.go)
-[Redis Srv Configure](conf/redis/srv)
+[Redis Test Client](client/rediscli.go)  
+[Redis Srv Configure](conf/redis/srv)  
 
 ```
 cd $GOPATH/src/github.com/toniz/gudp/client
