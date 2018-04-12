@@ -5,6 +5,7 @@ GUDP is a Unified Data Proxy using GRPC. Currently support mysql and redis(redis
 * Unify data access. business layer
 * Connections convergence. Several thousands of data request connections in the business layer. If you directly connect to the database, it will cause a waste of database resources. After GUDP, the number of links to the database can be optimally utilized.
 * Work hard to make it more scalable and support more data sources.
+* Horizontal expansion, business independence
 ### MYSQL:
 * Easy to use, modify the query logic does not need to change the business code, just change the GUDP SQL configuration statement. If you want to switching the database, just change the GUDP DB configuration.
 * Security, business layer will not be exposed to the data source. Through the replacement of parameters to achieve data query, a good defense SQL injection.
@@ -18,10 +19,11 @@ ___
 # 简介
 GUDP是一个统一访问代理．目前支持mysql. Redis是实验特性,仅实现部分. 后面会添加更多数据源支持.
 开发人员只需要使用GRPC调用本服务,无需关心数据库连接和查询细节.满足大部分的数据服务需求,并且追求简单,轻量化以及扩展性.使用GO语言编码.
-GUDP特性:
+## GUDP特性:
 * 使得数据访问统一化
 * 链接收敛.业务层几千个数据请求链接,如果直接访问数据库,会造成数据库资源浪费的问题.通过GUDP后,到数据库的链接个数能达到最优利用.
 * 努力使其具备更好的扩展性,支持更多的数据源.
+* 水平扩容，业务无关。
 
 MYSQL功能比较完善，目前有如下特性：
 * 简单易用,修改查询逻辑不需要改业务代码或者切换数据库,只需要改动GUDP的SQL配置语句.
