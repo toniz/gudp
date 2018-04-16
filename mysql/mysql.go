@@ -329,6 +329,7 @@ func (s *MysqlDataService) transCommit(ctx context.Context, req *pb.Query) (*pb.
 			}
 		} else {
 			if _, err = dbh.ExecContext(ctx, "COMMIT;"); err != nil {
+				// exp: The first database commit succeeded, and the latter failed. Print sql statement and manual repair.
 				grpclog.Warningf("Warn: Commit Transcation Failed: %s [%v]", req.Ident, err)
 			}
 		}
