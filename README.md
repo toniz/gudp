@@ -50,24 +50,27 @@ REDIS是实验性功能:
 ![测试](/doc/uml/uml.png)
 
 * Client Pass sql_id and key-value Paramters to GUDP using GPRC.    
-客户端传递 sql_id和参数。参数是key-value形式：  
+客户端通过GRPC向GUDP传递sql_id和参数。参数是key-value形式：  
 ![客户端](/doc/pic/p1.png)   
 
-* Call This Sql_id(ACCOUNT_t_user_select_by_uids)in GUDP SQL Configure.  
-表示调用了下面这句GUDP的SQL配置语句:  
+* Found This Sql_id(ACCOUNT_t_user_select_by_uids)in GUDP SQL Configure, And Replace Paramters.  
+表示调用了下面这句GUDP的SQL配置语句和替换相应参数:  
 ![客户端](/doc/pic/p3.png)  
 
 * Connect to db_id: db_t_account_r   
-其中的DB表示想下面这个DB执行这个SQL  
+找到db_t_account_r这个, 并执行这个SQL  
 ![客户端](/doc/pic/p2.png)  
 
-> means:
-> Connect To: 127.0.0.1 4000 
-> Execute This Sql:
-> SELECT user_id, user_name, type FROM t_user WHERE user_id>=100 ORDER BY user_id ASC LIMIT 10 
-> And Return Result.
 
-Detail Parameter:
+```
+means:
+Connect To: 127.0.0.1 4000 
+Execute This Sql:
+SELECT user_id, user_name, type FROM t_user WHERE user_id>=100 ORDER BY user_id ASC LIMIT 10 
+And Return Result.
+```
+
+### Detail Parameter:
 [更详细的配置说明](doc/mysql_parameter.md).  
 
 ## Example:
