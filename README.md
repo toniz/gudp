@@ -46,6 +46,7 @@ REDIS是实验性功能:
 * 简单易用,配置好配置文件就可访问redis.业务层不无关系链接细节.
 
 
+## Sequence Diagram
 ![测试](/doc/uml/uml.png)
 
 ## Example:
