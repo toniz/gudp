@@ -17,23 +17,6 @@ GUDP is a Unified Data Proxy using GRPC. Currently support mysql and redis(redis
 ### REDIS:
 * Easy to use.   
 
-
-```mermaid
-sequenceDiagram
-    participant Client
-    participant GUDP
-    participant DBConfigure
-    participant SQLConfigure
-    participant DB
-    GUDP->>DBConfigure: Get DB Configure
-    GUDP->>SQLConfigure:  Get Sql Configure
-    Client->>GUDP: Call Request
-    Note right of Client: Request Need:<br/> Sql_id and params
-    Note right of GUDP: Construct SQL:<br/>found sql_id in Sql<br/> Configure, and <br/>replace params ,<br/> get the db_id
-    GUDP->>DB: Found db_id in db configure ,call db 
-    DB->>GUDP: Return results
-    GUDP->>Client:  Return Packaging data
-```
 ___
 
 # 简介
@@ -62,6 +45,8 @@ MYSQL功能比较完善，目前有如下特性：
 REDIS是实验性功能:
 * 简单易用,配置好配置文件就可访问redis.业务层不无关系链接细节.
 
+
+![测试](/doc/uml/uml.png)
 
 ## Example:
 Mysql Read Write Spilting  

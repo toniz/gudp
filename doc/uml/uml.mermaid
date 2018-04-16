@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant Client
+    participant GUDP
+    participant DBConfigure
+    participant SQLConfigure
+    participant DB
+    GUDP->>DBConfigure: Get DB Configure
+    GUDP->>SQLConfigure:  Get Sql Configure
+    Client->>GUDP: Call Request
+    Note right of Client: Request Need:<br/> Sql_id and params
+    Note right of GUDP: Construct SQL:<br/>found sql_id in Sql<br/> Configure, and <br/>replace params ,<br/> get the db_id
+    GUDP->>DB: Found db_id in db configure ,call db 
+    DB->>GUDP: Return results
+    GUDP->>Client:  Return Packaging data
