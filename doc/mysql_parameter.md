@@ -75,7 +75,7 @@ db_t_gpsbox_w is definded in DBConfigure.
 } 
 ```
 
-### 5. sharding: {"dbseq": ""}
+### 1. sharding: {"dbseq": ""}
 ```
 使用client传过来的dbseq值,替换dbname里面的“$dbseq$”。
 Replace the value 'dbseq' in dbname. 
@@ -107,7 +107,7 @@ eg: Mysql Sharding Example
 }
 ```
 
-### 6. Put the sql configure in "sqlgroup". It will execute with transaction.   
+### 1. Put the sql configure in "sqlgroup". It will execute with transaction.   
 
 eg: 
 Mysql Multi DB Transcation  
