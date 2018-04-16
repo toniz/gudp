@@ -67,7 +67,8 @@ Execute This Sql:
 SELECT user_id, user_name, type FROM t_user WHERE user_id>=100 ORDER BY user_id ASC LIMIT 10 
 And Return Result.
 
-
+Detail Parameter:
+[更详细的配置说明](doc/mysql_parameter.md).  
 
 ## Example:
 Mysql Read Write Spilting  
