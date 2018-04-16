@@ -15,8 +15,25 @@ GUDP is a Unified Data Proxy using GRPC. Currently support mysql and redis(redis
 **Cons:** GUDP In order to make the caller more easily obtain the data, GUDP fetches the data from the database and encapsulates it into a structure easily accessible by the business layer. Performance will be consumed. However, if the general business layer uses a database, the amount of data will not be large,  Therefore, the delay of a few milliseconds of query has little impact on service access. If there are many query result sets, for example, if a statistical program needs to query and output 1 million data, GUDP is not suitable.
 
 ### REDIS:
-* Easy to use. 
+* Easy to use.   
 
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant GUDP
+    participant DBConfigure
+    participant SQLConfigure
+    participant DB
+    GUDP->>DBConfigure: Get DB Configure
+    GUDP->>SQLConfigure:  Get Sql Configure
+    Client->>GUDP: Call Request
+    Note right of Client: Request Need:<br/> Sql_id and params
+    Note right of GUDP: Construct SQL:<br/>found sql_id in Sql<br/> Configure, and <br/>replace params ,<br/> get the db_id
+    GUDP->>DB: Found db_id in db configure ,call db 
+    DB->>GUDP: Return results
+    GUDP->>Client:  Return Packaging data
+```
 ___
 
 # 简介
