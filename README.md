@@ -1,3 +1,7 @@
+* DEPRECATED - this project no longer maintained 
+* move project to: https://github.com/toniz/gosuit
+
+
 # GRPC Unified Data Proxy(GUDP)
 GUDP is a Unified Data Proxy using GRPC. Currently support mysql and redis(redis is an EXPERIMENTAL Feature.). Later will add more data source support. Developers only need to use GRPC to invoke this service without concern for database connection and query details. Meet most data service requirements, and pursue simplicity, lightweight and scalability. 
 
